@@ -16,15 +16,14 @@
 
 ## Cómo ejecutarlo
 
-### Opción 1: abrir el archivo
-Descomprime la carpeta `cancun-turismo` y abre `index.html` con doble clic en un navegador moderno (Chrome, Edge, Firefox, Safari).
 
-### Opción 2: con XAMPP (servidor local)
+
+### Opción 1: con XAMPP (servidor local)
 1. Copia la carpeta `cancun-turismo` a `C:\xampp\htdocs`.
 2. Abre el **XAMPP Control Panel** y presiona **Start** en Apache.
 3. Escribe en el navegador `http://localhost/cancun-turismo/`. Si tu Apache usa el puerto 89: `http://localhost:89/cancun-turismo/`.
 
-### Opción 3: verlo en el celular (GitHub Pages)
+### Opción 2: verlo en el celular (GitHub Pages)
 `localhost` en un celular se refiere al propio celular, por eso no abre la página de tu computadora. Para verla en cualquier teléfono:
 1. Sube la carpeta a un repositorio de GitHub (`git add .`, `git commit -m "mensaje"`, `git push`).
 2. En el repositorio entra a **Settings → Pages**, elige la rama `main` y presiona **Save**.
