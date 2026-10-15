@@ -87,16 +87,6 @@ La portada usa `svh` (altura real visible), así que no se corta con la barra de
 - **Agregar una oferta:** copia un bloque `<div class="col-12 col-md-6 col-lg-4 oferta" data-categoria="...">` y cambia imagen, título, descripción y precio. Las categorías son `romantico`, `familia` y `aventura`.
 - **Cambiar la paleta:** edita las variables de la sección `:root` en `css/styles.css`.
 
-## Solución de problemas
-| Problema | Causa probable | Solución |
-|---|---|---|
-| La página sale sin estilos | Sin internet (CDN) o ruta incorrecta | Revisa la conexión y que `css/styles.css` exista |
-| `Not found` en XAMPP | Carpeta fuera de `htdocs` o nombre distinto | Verifica la ruta y escribe el nombre igual en la dirección |
-| En el celular dice "no pudo conectarse al servidor" | Se usó `localhost` | Publica en GitHub Pages o usa la IP de tu computadora en la misma red |
-| El video no arranca solo | El navegador bloquea el autoplay | Presiona play en los controles |
-| El tema no cambia después de actualizar archivos | Copia guardada del navegador | Recarga con **Ctrl + F5** |
-| Fotos pixeladas | Imagen de baja resolución estirada | Usa fotos de mayor resolución (ver sección anterior) |
-
 ## Tecnologías y versiones
 - HTML5, CSS3, JavaScript (ES6)
 - Bootstrap **5.3.3** (CDN)
