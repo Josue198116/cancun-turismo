@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<!-- HTML5: DOCTYPE + atributo lang + UTF-8 + viewport (requisito 3.1) -->
+<html lang="es" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cancún Caribe Escapes: ofertas de viaje, galería, preguntas frecuentes y solicitud de información para visitar Cancún.">
+  <title>Cancún Caribe Escapes | Ofertas, galería y planeación de viaje</title>
+
+  <!-- Fuentes (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3.3 (versión registrada) por CDN -->
+  <script>
+    /* Aplica el tema guardado (o el del sistema) antes de pintar la página */
+    (function () {
+      try {
+        var t = localStorage.getItem("tema");
+        if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.setAttribute("data-bs-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Hoja de estilos externa propia -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <a class="visually-hidden-focusable skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- ===== ENCABEZADO + NAVBAR RESPONSIVA (Bootstrap, menú colapsable) ===== -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top barra-principal" aria-label="Navegación principal">
+      <div class="container">
+        <a class="navbar-brand marca" href="#inicio">Cancún Caribe Escapes</a>
+        <button id="btnTema" class="btn btn-outline-light btn-sm btn-tema ms-auto ms-lg-3 me-2 me-lg-0 order-lg-last" type="button" aria-pressed="false" aria-label="Cambiar tema">🌙 Oscuro</button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#menuPrincipal" aria-controls="menuPrincipal"
+                aria-expanded="false" aria-label="Abrir menú">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#ofertas">Ofertas</a></li>
+            <li class="nav-item"><a class="nav-link" href="#hoy">Hoy en Cancún</a></li>
+            <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
+            <li class="nav-item"><a class="nav-link" href="#faq">Preguntas</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contacto">Solicitar información</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="contenido">
+
+    <!-- ===== HERO con CAROUSEL de Bootstrap (componente interactivo #1) ===== -->
+    <section id="inicio" aria-labelledby="titulo-hero">
+      <div id="carruselHero" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carruselHero" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Diapositiva 1"></button>
+          <button type="button" data-bs-target="#carruselHero" data-bs-slide-to="1" aria-label="Diapositiva 2"></button>
+          <button type="button" data-bs-target="#carruselHero" data-bs-slide-to="2" aria-label="Diapositiva 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="5000">
+            <img src="img/hero-atardecer-960.jpg" srcset="img/hero-atardecer-480.jpg 480w, img/hero-atardecer-960.jpg 960w, img/hero-atardecer-1920.jpg 1920w" sizes="100vw" width="960" height="540" fetchpriority="high" decoding="async" class="d-block w-100 hero-img" alt="Vista aérea de la zona hotelera de Cancún al atardecer con el mar turquesa">
+          </div>
+          <div class="carousel-item" data-bs-interval="5000">
+            <img src="img/punta-esmeralda-960.jpg" srcset="img/punta-esmeralda-480.jpg 480w, img/punta-esmeralda-960.jpg 960w, img/punta-esmeralda-1200.jpg 1200w, img/punta-esmeralda-1600.jpg 1600w" sizes="100vw" width="960" height="720" loading="lazy" decoding="async" class="d-block w-100 hero-img" alt="Columpios y palmeras en la playa de Punta Esmeralda">
+          </div>
+          <div class="carousel-item" data-bs-interval="5000">
+            <img src="img/letrero-cancun-960.jpg" srcset="img/letrero-cancun-480.jpg 480w, img/letrero-cancun-960.jpg 960w, img/letrero-cancun-1600.jpg 1600w" sizes="100vw" width="960" height="720" loading="lazy" decoding="async" class="d-block w-100 hero-img" alt="Letrero colorido de Cancún frente al mar">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carruselHero" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carruselHero" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+
+        <div class="hero-texto container">
+          <h1 id="titulo-hero">El Caribe te espera en <em>Cancún</em></h1>
+          <p class="lead">Escapadas románticas, viajes familiares y aventuras frente al mar, con precios claros y un asesor que te ayuda a elegir.</p>
+          <div class="d-flex flex-wrap gap-2">
+            <a href="#ofertas" class="btn btn-warning btn-lg">Ver ofertas</a>
+            <a href="#contacto" class="btn btn-outline-light btn-lg">Solicitar información</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DATOS RÁPIDOS (CSS Grid) ===== -->
+    <section class="container datos-rapidos" aria-label="Datos rápidos">
+      <ul class="lista-datos">
+        <li><strong>32 °C</strong> promedio en verano</li>
+        <li><strong>+20 km</strong> de playas</li>
+        <li><strong>3 horas</strong> de vuelo desde CDMX</li>
+        <li><strong>Todo el año</strong> temporada de viaje</li>
+      </ul>
+    </section>
+
+    <!-- ===== OFERTAS: tarjetas + filtro (jQuery) ===== -->
+    <section id="ofertas" class="container seccion" aria-labelledby="titulo-ofertas">
+      <h2 id="titulo-ofertas">Ofertas de temporada</h2>
+      <p>Elige el tipo de viaje que buscas. Los precios son <strong>de ejemplo</strong>, por persona, e incluyen hospedaje y desayuno.</p>
+
+      <!-- Botones de filtro: los maneja jQuery en app.js -->
+      <div class="filtros d-flex flex-wrap gap-2 mb-4" role="group" aria-label="Filtrar ofertas por tipo de viaje">
+        <button type="button" class="btn btn-sm btn-primary filtro-btn active" data-filtro="todos">Todas</button>
+        <button type="button" class="btn btn-sm btn-outline-primary filtro-btn" data-filtro="romantico">Románticas</button>
+        <button type="button" class="btn btn-sm btn-outline-primary filtro-btn" data-filtro="familia">Familiares</button>
+        <button type="button" class="btn btn-sm btn-outline-primary filtro-btn" data-filtro="aventura">Aventura</button>
+      </div>
+
+      <p id="contador-ofertas" class="text-muted" aria-live="polite"></p>
+
+      <div class="row g-4" id="listaOfertas">
+        <div class="col-12 col-md-6 col-lg-4 oferta" data-categoria="romantico">
+          <article class="card h-100 tarjeta-oferta">
+            <img src="img/faro-luna-819.jpg" srcset="img/faro-luna-480.jpg 480w, img/faro-luna-819.jpg 819w" sizes="(min-width:992px) 33vw, (min-width:576px) 50vw, 100vw" width="819" height="1024" loading="lazy" decoding="async" class="card-img-top" alt="Faro de Punta Cancún con luna llena sobre el mar">
+            <div class="card-body">
+              <h3 class="card-title h5">Escapada Faro y Luna Llena</h3>
+              <p class="card-text">3 noches para dos, cena frente al mar y paseo nocturno por la zona del faro.</p>
+              <p class="precio">Desde <strong>$8,990</strong> MXN</p>
+            </div>
+            <div class="card-footer bg-transparent border-0 pb-3">
+              <a href="#contacto" class="btn btn-primary w-100 btn-cotizar" data-destino="romantico-faro">Cotizar esta oferta</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 oferta" data-categoria="familia">
+          <article class="card h-100 tarjeta-oferta">
+            <img src="img/faro-familia-960.jpg" srcset="img/faro-familia-480.jpg 480w, img/faro-familia-960.jpg 960w, img/faro-familia-1200.jpg 1200w" sizes="(min-width:992px) 33vw, (min-width:576px) 50vw, 100vw" width="960" height="540" loading="lazy" decoding="async" class="card-img-top" alt="Madre e hija en la playa junto al faro rojo y blanco">
+            <div class="card-body">
+              <h3 class="card-title h5">Aventura Familiar en Punta Cancún</h3>
+              <p class="card-text">4 noches con actividades para niños, paseo al faro y tarde de playa.</p>
+              <p class="precio">Desde <strong>$12,500</strong> MXN</p>
+            </div>
+            <div class="card-footer bg-transparent border-0 pb-3">
+              <a href="#contacto" class="btn btn-primary w-100 btn-cotizar" data-destino="familiar-punta">Cotizar esta oferta</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 oferta" data-categoria="romantico">
+          <article class="card h-100 tarjeta-oferta">
+            <img src="img/punta-esmeralda-960.jpg" srcset="img/punta-esmeralda-480.jpg 480w, img/punta-esmeralda-960.jpg 960w, img/punta-esmeralda-1200.jpg 1200w, img/punta-esmeralda-1600.jpg 1600w" sizes="(min-width:992px) 33vw, (min-width:576px) 50vw, 100vw" width="960" height="720" loading="lazy" decoding="async" class="card-img-top" alt="Columpios y palmeras en la playa de Punta Esmeralda">
+            <div class="card-body">
+              <h3 class="card-title h5">Días de playa en Punta Esmeralda</h3>
+              <p class="card-text">2 noches frente al mar, con palmeras, columpios y agua tranquila.</p>
+              <p class="precio">Desde <strong>$7,400</strong> MXN</p>
+            </div>
+            <div class="card-footer bg-transparent border-0 pb-3">
+              <a href="#contacto" class="btn btn-primary w-100 btn-cotizar" data-destino="atardeceres-hotelera">Cotizar esta oferta</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 oferta" data-categoria="familia">
+          <article class="card h-100 tarjeta-oferta">
+            <img src="img/hero-atardecer-960.jpg" srcset="img/hero-atardecer-480.jpg 480w, img/hero-atardecer-960.jpg 960w, img/hero-atardecer-1920.jpg 1920w" sizes="(min-width:992px) 33vw, (min-width:576px) 50vw, 100vw" width="960" height="540" loading="lazy" decoding="async" class="card-img-top" alt="Resort frente a la playa con alberca y sombrillas en Cancún">
+            <div class="card-body">
+              <h3 class="card-title h5">Resort Todo Incluido</h3>
+              <p class="card-text">5 noches con alimentos y bebidas, alberca, shows nocturnos y actividades diarias.</p>
+              <p class="precio">Desde <strong>$15,800</strong> MXN</p>
+            </div>
+            <div class="card-footer bg-transparent border-0 pb-3">
+              <a href="#contacto" class="btn btn-primary w-100 btn-cotizar" data-destino="todo-incluido">Cotizar esta oferta</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 oferta" data-categoria="aventura">
+          <article class="card h-100 tarjeta-oferta">
+            <img src="img/letrero-cancun-960.jpg" srcset="img/letrero-cancun-480.jpg 480w, img/letrero-cancun-960.jpg 960w, img/letrero-cancun-1600.jpg 1600w" sizes="(min-width:992px) 33vw, (min-width:576px) 50vw, 100vw" width="960" height="720" loading="lazy" decoding="async" class="card-img-top" alt="Letrero de colores de Cancún en la playa">
+            <div class="card-body">
+              <h3 class="card-title h5">Ruta de Playas y Fotografía</h3>
+              <p class="card-text">3 noches con recorrido por las playas más fotogénicas de la ciudad.</p>
+              <p class="precio">Desde <strong>$3,200</strong> MXN</p>
+            </div>
+            <div class="card-footer bg-transparent border-0 pb-3">
+              <a href="#contacto" class="btn btn-primary w-100 btn-cotizar" data-destino="ruta-playas">Cotizar esta oferta</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 oferta" data-categoria="aventura">
+          <article class="card h-100 tarjeta-oferta">
+            <img src="img/act-show-960.jpg" srcset="img/act-show-480.jpg 480w, img/act-show-960.jpg 960w, img/act-show-1600.jpg 1600w" sizes="(min-width:992px) 33vw, (min-width:576px) 50vw, 100vw" width="960" height="540" loading="lazy" decoding="async" class="card-img-top" alt="Show nocturno con artistas y antorchas de fuego">
+            <div class="card-body">
+              <h3 class="card-title h5">Noches de Cena y Espectáculo</h3>
+              <p class="card-text">Cena en restaurante de especialidad y show nocturno, con reservación incluida.</p>
+              <p class="precio">Desde <strong>$2,310</strong> MXN</p>
+            </div>
+            <div class="card-footer bg-transparent border-0 pb-3">
+              <a href="#contacto" class="btn btn-primary w-100 btn-cotizar" data-destino="cena-show">Cotizar esta oferta</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HOY EN CANCÚN: article + aside, inspirado en las pantallas del resort ===== -->
+    <section id="hoy" class="seccion seccion-oscura" aria-labelledby="titulo-hoy">
+      <div class="container">
+        <h2 id="titulo-hoy">Hoy en Cancún</h2>
+        <div class="row g-4">
+          <article class="col-12 col-lg-8">
+            <h3 class="h5">Actividades del día</h3>
+            <p>Los resorts publican la cartelera de actividades del día en pantallas ubicadas en puntos clave: el lobby, la alberca, los restaurantes y los pasillos. Esta es la programación de un día típico:</p>
+            <ol class="agenda">
+              <li><span class="hora">10:00 AM</span> Zumba junto a la alberca</li>
+              <li><span class="hora">12:00 PM</span> Voleibol acuático</li>
+              <li><span class="hora">03:00 PM</span> Clase de tenis en cancha</li>
+              <li><span class="hora">06:25 PM</span> Atardecer en la playa</li>
+              <li><span class="hora">08:00 PM</span> Cena de especialidad y show nocturno</li>
+            </ol>
+            <div id="carruselActividades" class="carousel slide carrusel-actividades mt-4 mb-0" data-bs-ride="carousel" aria-label="Actividades del día en el resort">
+              <div class="carousel-indicators"><button type="button" data-bs-target="#carruselActividades" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Diapositiva 1"></button><button type="button" data-bs-target="#carruselActividades" data-bs-slide-to="1" aria-label="Diapositiva 2"></button><button type="button" data-bs-target="#carruselActividades" data-bs-slide-to="2" aria-label="Diapositiva 3"></button><button type="button" data-bs-target="#carruselActividades" data-bs-slide-to="3" aria-label="Diapositiva 4"></button><button type="button" data-bs-target="#carruselActividades" data-bs-slide-to="4" aria-label="Diapositiva 5"></button></div>
+              <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="5000">
+          <img src="img/act-voleibol-960.jpg" srcset="img/act-voleibol-480.jpg 480w, img/act-voleibol-960.jpg 960w" sizes="(min-width:992px) 66vw, 100vw" width="960" height="540" loading="lazy" decoding="async" alt="Personas jugando voleibol bajo el agua">
+          <div class="carousel-caption">
+            <span class="hora">12:00 PM</span>
+            <h4>Voleibol acuático</h4>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+          <img src="img/act-tenis-960.jpg" srcset="img/act-tenis-480.jpg 480w, img/act-tenis-960.jpg 960w, img/act-tenis-1062.jpg 1062w" sizes="(min-width:992px) 66vw, 100vw" width="960" height="540" loading="lazy" decoding="async" alt="Raquetas y pelotas de tenis sobre una cancha de arcilla">
+          <div class="carousel-caption">
+            <span class="hora">03:00 PM</span>
+            <h4>Clase de tenis en cancha</h4>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+          <img src="img/hero-atardecer-960.jpg" srcset="img/hero-atardecer-480.jpg 480w, img/hero-atardecer-960.jpg 960w, img/hero-atardecer-1920.jpg 1920w" sizes="(min-width:992px) 66vw, 100vw" width="960" height="540" loading="lazy" decoding="async" alt="Atardecer sobre la zona hotelera y el mar de Cancún">
+          <div class="carousel-caption">
+            <span class="hora">06:25 PM</span>
+            <h4>Atardecer en la playa</h4>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+          <img src="img/act-cena-960.jpg" srcset="img/act-cena-480.jpg 480w, img/act-cena-960.jpg 960w, img/act-cena-1200.jpg 1200w" sizes="(min-width:992px) 66vw, 100vw" width="960" height="540" loading="lazy" decoding="async" alt="Mesa con copas y platos de una cena con luces de escenario">
+          <div class="carousel-caption">
+            <span class="hora">08:00 PM</span>
+            <h4>Cena de especialidad</h4>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+          <img src="img/act-show-960.jpg" srcset="img/act-show-480.jpg 480w, img/act-show-960.jpg 960w, img/act-show-1600.jpg 1600w" sizes="(min-width:992px) 66vw, 100vw" width="960" height="540" loading="lazy" decoding="async" alt="Artistas con antorchas de fuego en un show nocturno">
+          <div class="carousel-caption">
+            <span class="hora">08:00 PM</span>
+            <h4>Show nocturno</h4>
+          </div>
+        </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carruselActividades" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Anterior</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carruselActividades" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Siguiente</span>
+              </button>
+            </div>
+          </article>
+
+          <aside class="col-12 col-lg-4 d-flex" aria-labelledby="titulo-clima">
+            <div class="panel-clima">
+              <h3 id="titulo-clima" class="h5">Clima de ejemplo</h3>
+              <div class="d-flex justify-content-between text-center" id="climaCajas">
+                <div class="clima-dia"><p class="mb-1">Hoy</p><p class="grados" data-c="32">32 °C</p><small>Mín. 27 °C</small></div>
+                <div class="clima-dia"><p class="mb-1">Mañana</p><p class="grados" data-c="32">32 °C</p><small>Mín. 26 °C</small></div>
+              </div>
+              <!-- Cambio de unidades: lo hace JavaScript puro -->
+              <div class="form-check form-switch mt-3">
+                <input class="form-check-input" type="checkbox" role="switch" id="switchUnidad">
+                <label class="form-check-label" for="switchUnidad">Mostrar en °F</label>
+              </div>
+              <img src="img/cartelera-clima-960.jpg" srcset="img/cartelera-clima-480.jpg 480w, img/cartelera-clima-960.jpg 960w, img/cartelera-clima-1600.jpg 1600w" sizes="(min-width:992px) 50vw, 100vw" width="960" height="720" loading="lazy" decoding="async" class="foto-clima" alt="Pantalla de un resort mostrando el clima de hoy y mañana en Cancún">
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GALERÍA: CSS Grid + MODAL de Bootstrap (componente interactivo #2) ===== -->
+    <section id="galeria" class="container seccion" aria-labelledby="titulo-galeria">
+      <h2 id="titulo-galeria">Galería</h2>
+      <p>Haz clic en una foto para verla en grande.</p>
+      <div class="galeria-grid">
+        <button type="button" class="galeria-item" data-bs-toggle="modal" data-bs-target="#modalFoto"
+                data-src="img/hero-atardecer-1920.jpg" data-alt="Vista aérea de Cancún al atardecer" data-titulo="Zona hotelera al atardecer">
+          <img src="img/hero-atardecer-960.jpg" srcset="img/hero-atardecer-480.jpg 480w, img/hero-atardecer-960.jpg 960w, img/hero-atardecer-1920.jpg 1920w" sizes="(min-width:992px) 33vw, (min-width:576px) 50vw, 100vw" width="960" height="540" loading="lazy" decoding="async" alt="Vista aérea de Cancún al atardecer">
+        </button>
+        <button type="button" class="galeria-item" data-bs-toggle="modal" data-bs-target="#modalFoto"
+                data-src="img/faro-luna-819.jpg" data-alt="Faro rojo y blanco con luna llena" data-titulo="Faro y luna llena">
+          <img src="img/faro-luna-819.jpg" srcset="img/faro-luna-480.jpg 480w, img/faro-luna-819.jpg 819w" sizes="(min-width:992px) 33vw, (min-width:576px) 50vw, 100vw" width="819" height="1024" loading="lazy" decoding="async" alt="Faro rojo y blanco con luna llena">
+        </button>
+        <button type="button" class="galeria-item" data-bs-toggle="modal" data-bs-target="#modalFoto"
+                data-src="img/letrero-cancun-1600.jpg" data-alt="Letrero colorido de Cancún en la playa" data-titulo="Letrero de Cancún">
+          <img src="img/letrero-cancun-960.jpg" srcset="img/letrero-cancun-480.jpg 480w, img/letrero-cancun-960.jpg 960w, img/letrero-cancun-1600.jpg 1600w" sizes="(min-width:992px) 33vw, (min-width:576px) 50vw, 100vw" width="960" height="720" loading="lazy" decoding="async" alt="Letrero colorido de Cancún en la playa">
+        </button>
+        <button type="button" class="galeria-item" data-bs-toggle="modal" data-bs-target="#modalFoto"
+                data-src="img/faro-familia-1200.jpg" data-alt="Familia en la playa junto al faro" data-titulo="Día familiar en el faro">
+          <img src="img/faro-familia-960.jpg" srcset="img/faro-familia-480.jpg 480w, img/faro-familia-960.jpg 960w, img/faro-familia-1200.jpg 1200w" sizes="(min-width:992px) 33vw, (min-width:576px) 50vw, 100vw" width="960" height="540" loading="lazy" decoding="async" alt="Familia en la playa junto al faro">
+        </button>
+        <button type="button" class="galeria-item" data-bs-toggle="modal" data-bs-target="#modalFoto"
+                data-src="img/punta-esmeralda-1600.jpg" data-alt="Columpios y palmeras en la playa de Punta Esmeralda" data-titulo="Punta Esmeralda">
+          <img src="img/punta-esmeralda-960.jpg" srcset="img/punta-esmeralda-480.jpg 480w, img/punta-esmeralda-960.jpg 960w, img/punta-esmeralda-1200.jpg 1200w, img/punta-esmeralda-1600.jpg 1600w" sizes="(min-width:992px) 33vw, (min-width:576px) 50vw, 100vw" width="960" height="720" loading="lazy" decoding="async" alt="Columpios y palmeras en la playa de Punta Esmeralda">
+        </button>
+        <button type="button" class="galeria-item" data-bs-toggle="modal" data-bs-target="#modalFoto"
+                data-src="img/cartelera-clima-1600.jpg" data-alt="Pantalla del resort con clima y promociones" data-titulo="Clima y promociones del resort">
+          <img src="img/cartelera-clima-960.jpg" srcset="img/cartelera-clima-480.jpg 480w, img/cartelera-clima-960.jpg 960w, img/cartelera-clima-1600.jpg 1600w" sizes="(min-width:992px) 33vw, (min-width:576px) 50vw, 100vw" width="960" height="720" loading="lazy" decoding="async" alt="Pantalla del resort con clima y promociones">
+        </button>
+        <button type="button" class="galeria-item" data-bs-toggle="modal" data-bs-target="#modalFoto"
+                data-src="img/portal-playa-1200.jpg" data-alt="Escultura frente al mar en Playa del Carmen" data-titulo="Playa del Carmen">
+          <img src="img/portal-playa-960.jpg" srcset="img/portal-playa-480.jpg 480w, img/portal-playa-960.jpg 960w, img/portal-playa-1200.jpg 1200w" sizes="(min-width:992px) 33vw, (min-width:576px) 50vw, 100vw" width="960" height="720" loading="lazy" decoding="async" alt="Escultura frente al mar en Playa del Carmen">
+        </button>
+      </div>
+      <h3 class="h4 mt-5 text-center">Un paseo en yate</h3>
+      <div class="mx-auto mt-3" style="max-width:360px">
+        <video aria-label="Paseo en yate" class="w-100 rounded shadow" style="max-height:75vh;object-fit:cover;background:#000" autoplay muted loop playsinline controls preload="metadata" poster="video/poster.jpg">
+          <source src="video/paseo-yate.mp4" type="video/mp4">
+          Tu navegador no puede reproducir este video.
+        </video>
+        <p class="text-center small mt-2 mb-0">Video sin sonido</p>
+      </div>
+    </section>
+
+    <!-- ===== PREGUNTAS FRECUENTES: Accordion Bootstrap ===== -->
+    <section id="faq" class="container seccion" aria-labelledby="titulo-faq">
+      <h2 id="titulo-faq">Preguntas frecuentes</h2>
+      <div class="accordion" id="acordeonFaq">
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+              ¿Cuál es la mejor época para viajar a Cancún?
+            </button>
+          </h3>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#acordeonFaq">
+            <div class="accordion-body">De <strong>diciembre a abril</strong> hay menos lluvia y temperaturas agradables. De junio a octubre hace más calor y hay más posibilidades de lluvia, pero los precios suelen ser menores.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+              ¿Qué incluyen las ofertas?
+            </button>
+          </h3>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#acordeonFaq">
+            <div class="accordion-body">Cada tarjeta indica las noches y los servicios incluidos. Los precios mostrados son <em>de ejemplo</em> y se confirman con un asesor.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+              ¿Puedo viajar con niños?
+            </button>
+          </h3>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#acordeonFaq">
+            <div class="accordion-body">Sí. Las ofertas familiares incluyen actividades para niños y habitaciones para cuatro personas o más.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+              ¿Cómo solicito una cotización?
+            </button>
+          </h3>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#acordeonFaq">
+            <div class="accordion-body">Llena el formulario de la sección <a href="#contacto">Solicitar información</a>. Verás un resumen de tu solicitud al enviarlo.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FORMULARIO: HTML5 + Bootstrap + validación ===== -->
+    <section id="contacto" class="seccion seccion-arena" aria-labelledby="titulo-contacto">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-8">
+            <h2 id="titulo-contacto">Solicitar información</h2>
+            <p>Cuéntanos qué viaje tienes en mente. Los campos con <strong>*</strong> son obligatorios.</p>
+
+            <!-- Alerta de resultado (Bootstrap alert), se muestra con JS/jQuery -->
+            <div id="resultadoForm" class="alert d-none" role="alert" aria-live="polite"></div>
+
+            <form id="formInfo" novalidate>
+              <fieldset class="mb-4">
+                <legend>Tus datos</legend>
+                <div class="row">
+                  <div class="col-12 col-md-6 mb-3">
+                    <label for="nombre" class="form-label">Nombre completo *</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" required minlength="3" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü ]{3,}" placeholder="Ej. Ana Pérez">
+                    <div class="invalid-feedback">Escribe tu nombre (solo letras, mínimo 3).</div>
+                  </div>
+                  <div class="col-12 col-md-6 mb-3">
+                    <label for="correo" class="form-label">Correo electrónico *</label>
+                    <input type="email" class="form-control" id="correo" name="correo" required placeholder="nombre@correo.com">
+                    <div class="invalid-feedback">Escribe un correo válido.</div>
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset class="mb-4">
+                <legend>Tu viaje</legend>
+                <div class="row">
+                  <div class="col-12 col-md-6 mb-3">
+                    <label for="destino" class="form-label">Oferta de interés *</label>
+                    <select class="form-select" id="destino" name="destino" required>
+                      <option value="" selected disabled>Elige una opción</option>
+                      <option value="romantico-faro" data-precio="2997">Escapada Faro y Luna Llena</option>
+                      <option value="familiar-punta" data-precio="3125">Aventura Familiar en Punta Cancún</option>
+                      <option value="atardeceres-hotelera" data-precio="3700">Días de playa en Punta Esmeralda</option>
+                      <option value="todo-incluido" data-precio="3160">Resort Todo Incluido</option>
+                      <option value="ruta-playas" data-precio="1067">Ruta de Playas y Fotografía</option>
+                      <option value="cena-show" data-precio="2310">Noches de Cena y Espectáculo</option>
+                    </select>
+                    <div class="invalid-feedback">Elige una oferta.</div>
+                  </div>
+                  <div class="col-12 col-md-6 mb-3">
+                    <label for="fecha" class="form-label">Fecha de llegada *</label>
+                    <input type="date" class="form-control" id="fecha" name="fecha" required>
+                    <div class="invalid-feedback">Elige una fecha de hoy en adelante.</div>
+                  </div>
+                  <div class="col-6 col-md-3 mb-3">
+                    <label for="personas" class="form-label">Personas *</label>
+                    <input type="number" class="form-control" id="personas" name="personas" min="1" max="10" value="2" required>
+                    <div class="invalid-feedback">Entre 1 y 10.</div>
+                  </div>
+                  <div class="col-6 col-md-3 mb-3">
+                    <label for="noches" class="form-label">Noches *</label>
+                    <input type="number" class="form-control" id="noches" name="noches" min="1" max="21" value="3" required>
+                    <div class="invalid-feedback">Entre 1 y 21.</div>
+                  </div>
+                  <div class="col-12 col-md-6 mb-3">
+                    <span class="form-label d-block">Tipo de viaje</span>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="tipo" id="tipoPareja" value="Pareja" checked>
+                      <label class="form-check-label" for="tipoPareja">Pareja</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="tipo" id="tipoFamilia" value="Familia">
+                      <label class="form-check-label" for="tipoFamilia">Familia</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="tipo" id="tipoAmigos" value="Amigos">
+                      <label class="form-check-label" for="tipoAmigos">Amigos</label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Estimación en vivo (evento input en JS) -->
+                <p class="estimado" aria-live="polite">Estimado de ejemplo: <strong id="totalEstimado">elige una oferta</strong></p>
+              </fieldset>
+
+              <div class="mb-3">
+                <label for="mensaje" class="form-label">Comentarios</label>
+                <textarea class="form-control" id="mensaje" name="mensaje" rows="3" maxlength="300" placeholder="Cuéntanos si celebras algo especial."></textarea>
+                <div class="form-text"><span id="contadorMensaje">0</span>/300 caracteres</div>
+              </div>
+
+              <div class="form-check mb-4">
+                <input class="form-check-input" type="checkbox" id="acepto" name="acepto" required>
+                <label class="form-check-label" for="acepto">Acepto que me contacten sobre esta solicitud *</label>
+                <div class="invalid-feedback">Debes aceptar para continuar.</div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg">Enviar solicitud</button>
+              <button type="reset" class="btn btn-outline-secondary btn-lg ms-2" id="btnLimpiar">Limpiar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer class="pie">
+    <div class="container d-flex flex-column flex-md-row justify-content-between gap-3">
+      <p class="mb-0"><strong>Cancún Caribe Escapes</strong><br>El Caribe te espera en Cancún.</p>
+      <nav aria-label="Enlaces del pie">
+        <ul class="list-unstyled mb-0 pie-enlaces">
+          <li><a href="#ofertas">Ofertas</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#faq">Preguntas</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- ===== MODAL de la galería (Bootstrap) ===== -->
+  <div class="modal fade" id="modalFoto" tabindex="-1" aria-labelledby="modalFotoTitulo" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="modalFotoTitulo">Foto</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <img id="modalFotoImg" src="" alt="" class="img-fluid rounded w-100">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts: jQuery 3.7.1 + Bootstrap bundle 5.3.3 (CDN) y app.js con defer.
+       jQuery se carga primero porque app.js lo usa. -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>
